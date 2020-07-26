@@ -38,7 +38,7 @@ Use [SDKMan](https://sdkman.io/) for easy switching between Java Version (among 
 - `gu list`
 
 
-## Buiild project
+## Build project
 
 `./gradlew --no-daemon assemble`
 
@@ -62,7 +62,7 @@ Use [SDKMan](https://sdkman.io/) for easy switching between Java Version (among 
 Use command to run the native-executable: `./stackoverflow-cli search -q "merge maps" -t java --verbose`
 
 
-
+# TODO: Add Oauth2 for Stack Exchange
 
 # Github Issues
 
