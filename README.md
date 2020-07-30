@@ -7,6 +7,9 @@
 
 
 <p align="center">
+  <a href=https://docs.gradle.org/current/userguide/userguide.html">
+    <img alt="Gradle" src="https://gradle.org/images/gradle-knowledge-graph-logo.png?20170228" width="60" />
+  </a>
   <a href="https://micronaut.io/learn.html">
     <img alt="GraalVM" src="https://www.opencodez.com/wp-content/uploads/2019/08/Micronaut.png" width="60" />
   </a>
@@ -16,6 +19,10 @@
   <a href="https://picocli.info/">
     <img alt="Picocli" src="https://img.stackshare.io/service/10857/picocli.png" width="60" />
   </a>
+
+  
+  
+  
 
 
 
