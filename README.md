@@ -1,5 +1,16 @@
 # Java CLI
 
+# Table Of Contents
+
+- [Java CLI](#java-cli)
+- [Run commands](#run-commands)
+  * [GraalVM install](#graalvm-install)
+  * [Build project](#build-project)
+  * [CLI Commands to check JAR](#cli-commands-to-check-jar)
+  * [Native Binary creation](#native-binary-creation)
+- [TODO: Add Oauth2 for Stack Exchange](#todo-add-oauth2-for-stack-exchange)
+- [Github Issues](#github-issues)
+
 <p align="center">
   🔨 Built using <b>Micronaut</b> framework and <b>GraalVM</b> executable. CLI built using <b>Picocli</b> library.🔨
 </p>
