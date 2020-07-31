@@ -24,9 +24,8 @@ final class ClientConfiguration {
     public URI generateAuthUri(String redirectUri) {
         return UriBuilder.of(url)
                 .path("/oauth")
-
-                .queryParam("scope", scope)
                 .queryParam("client_id", clientId)
+                .queryParam("scope", scope)
                 .queryParam("redirect_uri", redirectUri)
                 .build();
     }
@@ -40,19 +39,19 @@ final class ClientConfiguration {
         this.url = url;
     }
 
-    public String getScope() {
-        return scope;
-    }
-
-    public void setScope(String scope) {
-        this.scope = scope;
-    }
-
     public int getClientId() {
         return clientId;
     }
 
     public void setClientId(int clientId) {
         this.clientId = clientId;
+    }
+
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
     }
 }

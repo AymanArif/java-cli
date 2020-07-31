@@ -7,7 +7,7 @@ stackoverflow:
     url: https://api.stackexchange.com/2.2
   auth:
     client:
-      url: https://www.stackoverflow.com
+      url: https://stackoverflow.com
       clientId: 18426
       scope: no_expiry
     server:

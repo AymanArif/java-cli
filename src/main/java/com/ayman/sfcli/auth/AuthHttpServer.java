@@ -1,8 +1,6 @@
 package com.ayman.sfcli.auth;
 
 import com.sun.net.httpserver.HttpServer;
-import picocli.CommandLine;
-import picocli.CommandLine.Help.Ansi;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -26,10 +24,9 @@ final class AuthHttpServer {
             var server = HttpServer.create(new InetSocketAddress(config.getHost(), config.getPort()), 0);
             server.createContext(config.getContext(), exchange -> {
                 var code = exchange.getRequestURI().toString().split("=")[1];
-                System.out.println("code=" + code);
+                System.out.println("Code retrieved." + code);
 
-                System.out.println("context" + server.getAddress());
-                var response = "";
+                var response = "Success! Authentication completed. You can close web browser and return to the terminal window.";
 
                 exchange.sendResponseHeaders(200, response.length());
                 exchange.getResponseBody().write(response.getBytes(StandardCharsets.UTF_8));

@@ -6,7 +6,7 @@ import picocli.CommandLine.Command;
 import javax.inject.Inject;
 
 @Command(name = "auth")
-public class AuthCommand implements Runnable {
+final public class AuthCommand implements Runnable {
 
     final ClientConfiguration clientConfiguration;
     final AuthHttpServer authHttpServer;
@@ -21,6 +21,7 @@ public class AuthCommand implements Runnable {
     public void run() {
         displayAuthUrl();
         handleRedirectUri();
+        System.exit(0);
     }
 
     private void handleRedirectUri() {
