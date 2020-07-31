@@ -12,10 +12,12 @@ import java.util.concurrent.TimeUnit;
 final class AuthHttpServer {
 
     final ServerConfiguration config;
+    final StackOverAuthClient authClient;
 
     @Inject
-    public AuthHttpServer(ServerConfiguration config) {
+    public AuthHttpServer(ServerConfiguration config, StackOverAuthClient authClient) {
         this.config = config;
+        this.authClient = authClient;
     }
 
     void start() {
@@ -26,7 +28,12 @@ final class AuthHttpServer {
                 var code = exchange.getRequestURI().toString().split("=")[1];
                 System.out.println("Code retrieved." + code);
 
+                var accessToken = authClient.accessToken(code);
+                System.out.println("AccessToken Revieved!");
+                System.out.println("access+token=" + accessToken .token);
+
                 var response = "Success! Authentication completed. You can close web browser and return to the terminal window.";
+
 
                 exchange.sendResponseHeaders(200, response.length());
                 exchange.getResponseBody().write(response.getBytes(StandardCharsets.UTF_8));

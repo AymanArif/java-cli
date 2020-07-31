@@ -10,6 +10,7 @@ stackoverflow:
       url: https://stackoverflow.com
       clientId: 18426
       scope: no_expiry
+      secret: "Exported"
     server:
       host: localhost
       port: 8085
