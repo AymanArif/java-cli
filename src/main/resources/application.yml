@@ -11,6 +11,7 @@ stackoverflow:
       clientId: 18426
       scope: no_expiry
       secret: "Exported"
+      key: )59r1iBapYkjTuslm52RRg((
     server:
       host: localhost
       port: 8085

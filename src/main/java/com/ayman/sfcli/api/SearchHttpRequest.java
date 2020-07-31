@@ -4,8 +4,6 @@ package com.ayman.sfcli.api;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micronaut.context.annotation.Value;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.QueryValue;
 import io.micronaut.http.uri.UriBuilder;
 
 import javax.inject.Singleton;
@@ -19,12 +17,12 @@ import java.util.zip.GZIPInputStream;
  * More verbose version of Micronaut's Declarative @link{StackOverflowGateway}
  */
 @Singleton
-public class StackOverflowJavaHTTPClient {
+public class SearchHttpRequest {
 
     final ObjectMapper mapper;
     final String stackOverFlowApiUrl;
 
-    public StackOverflowJavaHTTPClient(ObjectMapper mapper, @Value("${stackoverflow.api.url}") String stackOverFlowApiUrl) {
+    public SearchHttpRequest(ObjectMapper mapper, @Value("${stackoverflow.api.url}") String stackOverFlowApiUrl) {
         this.mapper = mapper;
         this.stackOverFlowApiUrl = stackOverFlowApiUrl;
     }

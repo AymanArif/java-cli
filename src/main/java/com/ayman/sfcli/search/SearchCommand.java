@@ -1,14 +1,12 @@
 package com.ayman.sfcli.search;
 
 
-import com.ayman.sfcli.api.ApiResponse;
 import com.ayman.sfcli.api.Question;
-import com.ayman.sfcli.api.StackOverflowGateway;
-import com.ayman.sfcli.api.StackOverflowJavaHTTPClient;
-import picocli.CommandLine;
+import com.ayman.sfcli.api.SearchHttpRequest;
+import com.ayman.sfcli.api.StackOverflowHttpClient;
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Option;
 import picocli.CommandLine.Help.Ansi;
+import picocli.CommandLine.Option;
 
 import javax.inject.Inject;
 
@@ -35,17 +33,17 @@ public class SearchCommand implements Runnable{
     boolean verbose;
 
     @Inject
-    StackOverflowGateway client;
+    StackOverflowHttpClient client;
 
     @Inject
-    StackOverflowJavaHTTPClient request;
+    SearchHttpRequest request;
 
     @Override
     public void run() {
 
-        //System.out.println("Search command CLI... ");
-        //var response = client.search(query, tag, limit, sort);
-        var response = request.execute(query, tag, limit, sort);
+        System.out.println("Search command CLI... ");
+        var response = client.search(query, tag, limit, sort);
+        //var response = request.execute(query, tag, limit, sort);
 
 
         response.items.stream()
@@ -54,8 +52,8 @@ public class SearchCommand implements Runnable{
 
         if (verbose) {
             System.out.printf("\n Items size: %d | Quota max: %d | Quota remaining: %d | Has more: %s\n",
-                                response.items.size(),
-                                response.quotaMax,
+                    response.items.size(),
+                    response.quotaMax,
                                 response.quotaRemaining,
                                 response.hasMore
                             );

@@ -6,7 +6,7 @@ import io.micronaut.http.annotation.QueryValue;
 import io.micronaut.http.client.annotation.Client;
 
 @Client("${stackoverflow.auth.client.url}")
-public interface StackOverAuthClient {
+public interface StackOverflowAuthClient {
 
     @Post(value = "/oauth/access_token/json"
             + "?client_id=${stackoverflow.auth.client.clientId}"

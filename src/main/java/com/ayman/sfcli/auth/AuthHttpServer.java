@@ -1,7 +1,6 @@
 package com.ayman.sfcli.auth;
 
 import com.sun.net.httpserver.HttpServer;
-import static picocli.CommandLine.Help.Ansi;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -10,13 +9,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+import static picocli.CommandLine.Help.Ansi;
+
 final class AuthHttpServer {
 
     final ServerConfiguration config;
-    final StackOverAuthClient authClient;
+    final StackOverflowAuthClient authClient;
 
     @Inject
-    public AuthHttpServer(ServerConfiguration config, StackOverAuthClient authClient) {
+    public AuthHttpServer(ServerConfiguration config, StackOverflowAuthClient authClient) {
         this.config = config;
         this.authClient = authClient;
     }
