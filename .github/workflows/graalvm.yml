@@ -1,0 +1,30 @@
+# Workflow for GraalVM 
+# Used sdkman to fetch GraalVM
+
+name: Java CI with GraalVM
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install sdman 1 - curl
+      run: curl -s "https://get.sdkman.io" | bash
+    - name: Install sdman 2 - Setting env variable
+      run: echo ::add-path::$HOME/.sdkman/bin/sdkman-init.sh
+    - name: Print Path
+      run: echo $PATH
+    - name: Print HOME
+      run: echo $HOME
+    - name: Install sdman 3 - Check version
+      run: sdk version      
+      
