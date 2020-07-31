@@ -1,10 +1,10 @@
 micronaut:
   application:
     name: stackoverflowCli
+
 stackoverflow:
   api:
     url: https://api.stackexchange.com/2.2
-
   auth:
     client:
       url: https://www.stackoverflow.com
@@ -12,7 +12,7 @@ stackoverflow:
       scope: no_expiry
     server:
       host: localhost
-      port: ${random.port}
+      port: 8085
       context: /auth
       redirectUri: "http://${stackoverflow.auth.server.host}:${stackoverflow.auth.server.port}${stackoverflow.auth.server.context}"
       timeout: 60

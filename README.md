@@ -92,7 +92,6 @@ Running only `auth` package
 
 ./gradlew --no-daemon run --args="auth" 
 
-
 # Github Issues
 
 1. Graceful shutdown of Netty Event Loop (Micronaut's HTTP client) takes 2 seconds. 
