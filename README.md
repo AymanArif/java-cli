@@ -72,7 +72,7 @@ Use [SDKMan](https://sdkman.io/) for easy switching between Java Version (among 
 
 - `java -jar build/libs/stackoverflow-cli-0.1-all.jar search -q "merge maps" -t java --verbose`
 
-# Native Binary creation
+## Native Binary creation
 
 `native-image --no-server -cp build/libs/stackoverflow-cli-0.1-all.jar`
 - Builds the JAR to binary executable, which doesn't require java for executing.
@@ -80,7 +80,18 @@ Use [SDKMan](https://sdkman.io/) for easy switching between Java Version (among 
 Use command to run the native-executable: `./stackoverflow-cli search -q "merge maps" -t java --verbose`
 
 
-# TODO: Add Oauth2 for Stack Exchange
+# Add Oauth2 for Stack Exchange
+
+
+API Link: https://api.stackexchange.com/docs/authentication
+
+Register API here: https://stackapps.com/apps/oauth/register
+
+
+Running only `auth` package
+
+./gradlew --no-daemon run --args="auth" 
+
 
 # Github Issues
 

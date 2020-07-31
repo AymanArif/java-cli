@@ -44,8 +44,8 @@ public class SearchCommand implements Runnable{
     public void run() {
 
         //System.out.println("Search command CLI... ");
-        //var response = client.search(query, tag, limit, sort); // TODO: Chagne to var (Java 11)
-        var response = request.execute(query, tag, limit, sort); // TODO: Chagne to var (Java 11)
+        //var response = client.search(query, tag, limit, sort);
+        var response = request.execute(query, tag, limit, sort);
 
 
         response.items.stream()

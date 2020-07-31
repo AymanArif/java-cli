@@ -4,3 +4,15 @@ micronaut:
 stackoverflow:
   api:
     url: https://api.stackexchange.com/2.2
+
+  auth:
+    client:
+      url: https://www.stackoverflow.com
+      clientId: 18426
+      scope: no_expiry
+    server:
+      host: localhost
+      port: ${random.port}
+      context: /auth
+      redirectUri: "http://${stackoverflow.auth.server.host}:${stackoverflow.auth.server.port}${stackoverflow.auth.server.context}"
+      timeout: 60

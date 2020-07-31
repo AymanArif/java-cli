@@ -1,5 +1,6 @@
 package com.ayman.sfcli;
 
+import com.ayman.sfcli.auth.AuthCommand;
 import com.ayman.sfcli.search.SearchCommand;
 import io.micronaut.configuration.picocli.PicocliRunner;
 import io.micronaut.context.ApplicationContext;
@@ -10,7 +11,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
 @Command(name = "stackoverflow-cli", description = "...",
-        mixinStandardHelpOptions = true, subcommands = {SearchCommand.class})
+        mixinStandardHelpOptions = true, subcommands = {SearchCommand.class, AuthCommand.class})
 public class StackoverflowCliCommand implements Runnable {
 
     @Option(names = {"-v", "--verbose"}, description = "...")
