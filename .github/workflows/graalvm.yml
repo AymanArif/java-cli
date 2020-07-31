@@ -20,7 +20,7 @@ jobs:
     - name: Install sdman 1 - curl
       run: curl -s "https://get.sdkman.io" | bash
     - name: Install sdman 2 - Setting env variable
-    - run: echo ::add-path::$HOME/.sdkman/bin/sdkman-init.sh
+      run: echo ::add-path::$HOME/.sdkman/bin/sdkman-init.sh
     - name: Install sdman 3 - Check version
       run: sdk version      
       
