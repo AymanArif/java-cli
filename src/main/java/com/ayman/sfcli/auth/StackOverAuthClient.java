@@ -15,5 +15,4 @@ public interface StackOverAuthClient {
             , processes = "application/x-www-form-urlencoded")
     AccessToken accessToken(@QueryValue("code") String code);
 
-
 }

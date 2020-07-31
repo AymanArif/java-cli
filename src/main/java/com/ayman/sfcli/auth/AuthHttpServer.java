@@ -1,6 +1,7 @@
 package com.ayman.sfcli.auth;
 
 import com.sun.net.httpserver.HttpServer;
+import static picocli.CommandLine.Help.Ansi;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -29,8 +30,11 @@ final class AuthHttpServer {
                 System.out.println("Code retrieved." + code);
 
                 var accessToken = authClient.accessToken(code);
-                System.out.println("AccessToken Revieved!");
+                System.out.println("AccessToken Retrieved!");
                 System.out.println("access+token=" + accessToken .token);
+
+                Credentials.store(accessToken.token);
+
 
                 var response = "Success! Authentication completed. You can close web browser and return to the terminal window.";
 
@@ -45,6 +49,7 @@ final class AuthHttpServer {
             latch.await(config.getTimeout(), TimeUnit.SECONDS);
             server.stop(0);
 
+            System.out.println(Ansi.ON.string("@|bold,fg(green) Success! You are now authenticated!|@"));
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -1,6 +1,7 @@
 package com.ayman.sfcli;
 
 import com.ayman.sfcli.auth.AuthCommand;
+import com.ayman.sfcli.auth.Credentials;
 import com.ayman.sfcli.search.SearchCommand;
 import io.micronaut.configuration.picocli.PicocliRunner;
 import io.micronaut.context.ApplicationContext;
@@ -18,6 +19,7 @@ public class StackoverflowCliCommand implements Runnable {
     boolean verbose;
 
     public static void main(String[] args) throws Exception {
+        Credentials.init();
         PicocliRunner.run(StackoverflowCliCommand.class, args);
     }
 

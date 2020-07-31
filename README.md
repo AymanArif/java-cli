@@ -34,6 +34,15 @@
   
   
   
+    - name: Install GraalVM using sdkman
+      run: sdk install java 20.1.0.r11-grl
+    - name: Use GraalVm
+      run: sdk use java 20.1.0.r11-grl
+    - name: Install Native Image executable using gu
+      run: gu install native-image
+    - name: List GrallVM CLI
+      run: gu list
+  
 
 
 
@@ -91,6 +100,10 @@ Register API here: https://stackapps.com/apps/oauth/register
 Running only `auth` package
 
 ./gradlew --no-daemon run --args="auth" 
+
+## Store credentails
+
+Credentials are stored in: `~/.stackoverflow-cli/credentials.properties`
 
 # Github Issues
 
