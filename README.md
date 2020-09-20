@@ -32,16 +32,14 @@
   </a>
 
   
-  
-  
-    - name: Install GraalVM using sdkman
-      run: sdk install java 20.1.0.r11-grl
-    - name: Use GraalVm
-      run: sdk use java 20.1.0.r11-grl
-    - name: Install Native Image executable using gu
-      run: gu install native-image
-    - name: List GrallVM CLI
-      run: gu list
+# Setup (SDKMan and GraalVM)
+
+|Description|CLI Comamnd|
+|---|---|
+|Install GraalVM using sdkman | `sdk install java 20.1.0.r11-grl` |
+|Use GraalVm | `sdk use java 20.1.0.r11-grl` |
+|Install Native Image executable using *GraalVM Updater* | `gu install native-image` |
+|List GraalVM CLI | `gu list` |
   
 
 
